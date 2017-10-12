@@ -1,5 +1,23 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
 
-{{outlet}}
+{{#bulma-container isFluid=true}}
+{{#bulma-columns}} {{!col1}} {{#bulma-column}}
+<h1>Home</h1>
+{{/bulma-column}} 
+{{/bulma-columns}} 
+
+{{#bulma-columns}}
+    {{#bulma-column is2=true}}
+        <ul>
+            <li>
+                {{#link-to "users"}} Users {{/link-to}}
+            </li>
+            <li>
+                {{#link-to "posts"}} Posts {{/link-to}}
+            </li>
+        </ul>
+{{/bulma-column}}
+    {{#bulma-column}} 
+        {{outlet}} 
+    {{/bulma-column}} 
+{{/bulma-columns}}
+{{/bulma-container}}

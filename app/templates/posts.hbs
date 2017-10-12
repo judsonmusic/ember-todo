@@ -1,0 +1,24 @@
+{{outlet}}
+<h1>Posts</h1>
+<hr>
+<p>Below are the posts from users.</p>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Comment</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each model as |post|}}
+            <tr>
+                <td>{{post.title}}</td>
+                <td>{{post.body}}</td>
+                <td>{{post.user.name}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
